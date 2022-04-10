@@ -1,12 +1,3 @@
-# rin-irc
-A python function to handle message parsing for raw irc messages
-
-Based on go module [go-irc](https://github.com/go-irc/irc) 
-
-
-## Example Useage
-+ A Simple Twitch bot
-```py
 import socket
 from irc import rinIRC
 
@@ -61,4 +52,3 @@ class Simplebot():
 
 if __name__ == "__main__":
     Simplebot().run()
-```
