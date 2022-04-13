@@ -20,13 +20,15 @@ class Simplebot():
 
         print("Socket dial -> irc.twitch.tv:6667")
         self.sock.connect(("irc.twitch.tv", 6667))
-        self.sock.send("NICK justinfan123\r\n".encode("utf-8"))
+        
+        # self.sock.send(f"PASS 12345\r\n".encode("utf-8")) # Replace 12345 with key from: https://twitchapps.com/tmi
+        self.sock.send("NICK justinfan123\r\n".encode("utf-8")) # Replace justinfan123 with your name
 
         self.sock.send(bytes("CAP REQ :twitch.tv/tags\r\n", "UTF-8"))
         self.sock.send(bytes("CAP REQ :twitch.tv/membership\r\n", "UTF-8"))
         self.sock.send(bytes("CAP REQ :twitch.tv/commands\r\n", "UTF-8"))
 
-        self.sock.send("JOIN #twitchmedia_qs_10\r\n".encode("utf-8"))
+        self.sock.send("JOIN #twitchmedia_qs_10\r\n".encode("utf-8")) #Replace twitchmedia_qs_10 with channel to join
 
         return
 
